@@ -39,8 +39,8 @@ This project contains a Twitch chat bot that allows users to interactively trade
 2. Join your Twitch channel and interact with the bot using commands like !buy <symbol> and !sell <symbol> .
 
 ## Commands
-- !buy <symbol>: Buy the specified stocks for the given symbol.
-- !sell <symbol>: Sell the specified stocks for the given symbol.
+- '!buy <symbol>': Buy the specified stocks for the given symbol.
+- '!sell <symbol>': Sell the specified stocks for the given symbol.
 
 ## Directory Structure
 - main.py: Entry point for running the Twitch bot and stock trading functionalities.
