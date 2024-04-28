@@ -1,0 +1,2 @@
+websocket-client==1.2.1
+ed25519==1.5
