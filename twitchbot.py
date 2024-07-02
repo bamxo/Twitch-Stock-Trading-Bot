@@ -36,6 +36,8 @@ class TwitchBot:
                     #symbol = parts[2].strip().split()[1]
                     #self.send_message(ws, f"@{username} Sold {symbol}")
                     #print(f"SELL {symbol} {username}")
+                elif "!view" in parts[2].strip().lower():
+                    self.handle_view_command(ws, username, parts[2].strip())
                 elif "!hi" in parts[2].strip().lower():
                     self.send_message(ws, f"@{username} Hi there!")
         else:
@@ -81,6 +83,15 @@ class TwitchBot:
             self.send_message(ws, f"@{username} {response}")
         else:
             self.send_message(ws, f"@{username} Invalid commmand format. Use: !sell <symbol>")
+    
+    def handle_view_command(self, ws, username, command):
+        parts = command.split()
+        if len(parts) == 2:
+            symbol = parts[1].upper()
+            response = self.stock_trader.get_quote(symbol)
+            self.send_message(ws, f"@{username} {response}")
+        else:
+            self.send_message(ws, f"@{username} Invalid command format. Use: !view <symbol>")
 
     def run_bot(self):
         websocket.enableTrace(True)
@@ -93,7 +104,6 @@ class TwitchBot:
         threading.Thread(target=self.listen_input, args=(self.ws,), daemon=True).start()
         self.ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE})
         print("\nClosing bot...")
-
 
 
 
