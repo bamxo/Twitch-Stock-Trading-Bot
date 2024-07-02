@@ -21,6 +21,7 @@ This project contains a Twitch chat bot that allows users to interactively trade
 2. Install the required Python packages:
     ```bash
     pip install -r requirements.txt
+    pip install robin-stocks
     ```
 
 3. Obtain the necessary API keys:
