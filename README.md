@@ -1,4 +1,4 @@
-# Twitch Stock Trading Bot
+# Twitch Chat Bot
 
 ## Overview
 This project contains a Twitch chat bot that allows users to interactively trade stocks using commands in the chat. The bot listens for specific commands related to buying and selling stocks, communicates with the Robinhood API for executing trades, and provides feedback to users in the chat.
